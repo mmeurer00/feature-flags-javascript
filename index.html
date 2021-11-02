@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Feature Flag Demo</title>
+    <script>
+    // To create different features, create alternate feature classes that can be used in the URL query
+    </script>
+    <style>
+      li {
+        display: inline-block;
+        margin-left: 1em;
+        color: blue;
+        font-size: 20px
+      }
+
+      .new-feature {
+        display: none;
+      }
+
+      .ft-new-feature .new-feature {
+        display: inline-block;
+        color: red;
+        font-size: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <p style='font-size: 30px'>
+        Feature Flag Demo: Javscript
+    </p>
+    <p style='font-size: 20px'>Add <code>?ft=new-feature</code> to the end
+      of the url to see the new feature. </p>
+      <p>When adding this script to a rails application, 
+      simply treat the index.html as you would a views file. You can also create a folder 
+      that contains the FeatureFlag.js file/script and import it into the designated views file.</p>
+    <div class="menu">
+      <ul>
+        <li class="old-feature">Old feature</li>
+        <li class="new-feature">New feature!</li>
+      </ul>
+    </div>
+    <script src="featureFlag.js">
+    // Import your JS file containting your feature flag script
+    </script>
+    <script>
+      // Activate the feature toggle system.
+      var feature = setFeatures();
+
+      // You can also set your new feature by running: feature.active('new-feature');
+    </script>
+  </body>
+</html>
